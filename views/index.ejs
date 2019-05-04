@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Trending topics on GitHub using NodeJS WebScraping</title>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- styles -->
+    <link href="../styles/styles.css" rel="stylesheet" type="text/css"/>
+  </head>
+
+  <body>
+    <div class="title">
+      <h1>Last trending topics on GitHub</h1>
+    </div>
+    <div class="topics">
+      <%if (result.length) {%>
+        <%result.forEach(function(res){%>
+          <div class="box">
+            <h2><%=res.topic%></h2>
+            <hr>
+            <%if (res.description.length < 50) {%>
+              <p><%=res.description%></p>
+              <hr>
+            <%} else {%>
+              <p><%=res.description.substring(0, 50)%>...</p>
+              <hr>
+            <%}%>
+            <a href="<%=res.link%>" target="_blank"'>Check it out !</a>
+          </div>
+        <%})%>
+      <%}%>
+    </div>
+  </body>
+</html>
