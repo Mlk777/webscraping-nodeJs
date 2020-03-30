@@ -4,7 +4,7 @@ const express = require('express');
 const rp = require('request-promise');
 const ejs = require('ejs');
 const app = express();
-const PORT = process.env.port || 3000;
+const PORT = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname, +'/styles'));
