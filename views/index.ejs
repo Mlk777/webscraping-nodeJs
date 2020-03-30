@@ -6,30 +6,47 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <!-- styles -->
-    <link href="../styles/styles.css" rel="stylesheet" type="text/css"/>
+    <link href="../styles/styles.css" rel="stylesheet" type="text/css" />
+    <!-- Tailwind.css -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.2.0/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
   </head>
 
   <body>
-    <div class="title">
+    <div class="title text-5xl font-extrabold p-4">
       <h1>Last trending topics on GitHub</h1>
     </div>
-    <div class="topics">
-      <%if (result.length) {%>
-        <%result.forEach(function(res){%>
-          <div class="box">
-            <h2><%=res.topic%></h2>
-            <hr>
-            <%if (res.description.length < 50) {%>
-              <p><%=res.description%></p>
-              <hr>
-            <%} else {%>
-              <p><%=res.description.substring(0, 50)%>...</p>
-              <hr>
-            <%}%>
-            <a href="<%=res.link%>" target="_blank"'>Check it out !</a>
+    <div class="main__container p-6">
+      <%if (result.length) {%> <%result.forEach(function(res){%>
+      <div class="box bg-gray-100 rounded-lg">
+        <div class="sub__container border-r-2 border-solid border-gray-900">
+          <div class="topic text-xl text-gray-800 font-semibold ml-2 mt-1">
+            <%=res.topic%>
           </div>
-        <%})%>
-      <%}%>
+          <%if (res.description.length < 100) {%>
+          <p class="description text-gray-600 text-base ml-4 p-2 italic">
+            <%=res.description%>
+          </p>
+          <%} else {%>
+          <p class="description text-gray-600 text-base ml-4 p-2 italic">
+            <%=res.description.substring(0, 100)%>...
+          </p>
+          <%}%>
+        </div>
+        <div class="link">
+          <a href="<%=res.link%>" target="_blank" rel="noreferrer noopener"
+            ><i class="fas fa-external-link-alt fa-2x"></i
+          ></a>
+        </div>
+      </div>
+      <%})%> <%}%>
     </div>
   </body>
 </html>

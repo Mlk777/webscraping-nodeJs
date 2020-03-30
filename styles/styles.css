@@ -4,49 +4,39 @@ body {
   padding: 0;
 }
 
+body {
+  background-color: #ecf5f3;
+  overflow-x: hidden;
+}
+
 .title {
   width: 100vw;
   display: flex;
   justify-content: center;
-  font-size: 2rem;
 }
 
-.topics {
+.main__container {
   display: grid;
-  grid-gap: 15px;
+  grid-row-gap: 25px;
   justify-content: space-around;
-  grid-template-columns: repeat(auto-fill, 250px);
-  padding: 25px;
+  grid-template-columns: repeat(auto-fill, 600px);
 }
 
 .box {
+  height: 130px;
   display: grid;
-  grid-template-rows: 1fr 2fr 1fr;
-  justify-items: center;
-  align-items: center;
-  height: 250px;
-  width: 250px;
+  grid-template-columns: 4fr 1fr;
   border: 1px solid black;
-  border-radius: 5px;
 }
 
-h2 {
-  margin-bottom: 0;
-  text-align: center;
+.sub__container {
+  display: grid;
+  align-items: start;
 }
 
-p {
-  text-align: center;
-  font-size: 1.5rem;
-  font-style: oblique;
-}
-
-a {
-  font-size: 1.5rem;
-  text-decoration: none;
-}
-
-hr {
-  margin: none;
-  width: 80%;
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
 }
